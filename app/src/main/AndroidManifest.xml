@@ -1,0 +1,45 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="cn.example.cropsmonitoring">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.CropsMonitoring">
+
+        <!-- 这些 Activity 没有 intent-filter，可以设置为 false -->
+        <activity
+            android:name=".HomeFragment"
+            android:exported="false" />
+        <activity
+            android:name=".JianceFragment"
+            android:exported="false" />
+        <activity
+            android:name=".ShibieFragment"
+            android:exported="false" />
+
+        <!-- 这个 Activity 有 intent-filter，根据需要设置为 true 或 false -->
+        <activity
+            android:name=".Home_pageActivity"
+            android:exported="true"> <!-- 确保有 intent-filter 的 Activity 设置了 exported -->
+            <!-- 如果 Home_pageActivity 也需要作为入口点，可以添加以下 intent-filter -->
+            <!-- <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter> -->
+        </activity>
+
+        <!-- MainActivity 已经正确设置了 exported 属性 -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+    </application>
+</manifest>
